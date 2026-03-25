@@ -1,0 +1,309 @@
+/* ── About Pages Base ── */
+.about-page {
+    margin-top: 90px;
+    padding: 3rem 2rem;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ── Title Row (shared with resume) ── */
+.about-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.about-main-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 6px;
+    text-align: center;
+    text-transform: uppercase;
+    flex: 1;
+}
+
+/* ── Spinning Ball (same as resume) ── */
+.spin-ball-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #aaa;
+    font-size: 0.9rem;
+    font-family: 'Orbitron', sans-serif;
+    transition: color 0.2s;
+    flex-shrink: 0;
+}
+
+.spin-ball-link:hover { color: #f5c518; text-decoration: none !important; }
+
+.spin-ball {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid #f5c518;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.spin-ball::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: #f5c518;
+    border-radius: 50%;
+    animation: orbit-dot 2s linear infinite;
+}
+
+@keyframes orbit-dot {
+    0%   { top: -5px; left: 50%; }
+    25%  { top: 50%;  left: 105%; }
+    50%  { top: 105%; left: 50%; }
+    75%  { top: 50%;  left: -5px; }
+    100% { top: -5px; left: 50%; }
+}
+
+.spin-ball-link:hover .spin-ball { background-color: #f5c518; }
+.spin-label { font-weight: 500; letter-spacing: 2px; font-size: 0.8rem; }
+
+/* ── Fade In ── */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ── Section Header ── */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+}
+.section-icon { font-size: 1.4rem; color: #f5c518; }
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* ── Section Divider ── */
+.section-divider-about {
+    border: none;
+    border-top: 1px solid #1a1a1a;
+    margin: 3rem 0;
+    position: relative;
+}
+.section-divider-about::after {
+    content: '';
+    position: absolute;
+    top: -1px; left: 0;
+    width: 60px; height: 2px;
+    background-color: #f5c518;
+}
+
+/* ── Timeline (shared) ── */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #f5c518, #333);
+}
+.timeline-item { position: relative; margin-bottom: 2rem; }
+.timeline-dot {
+    position: absolute;
+    left: -27px; top: 6px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background-color: #000;
+    border: 2px solid #f5c518;
+    box-shadow: 0 0 8px #f5c518;
+}
+.timeline-content {
+    background-color: #0d0d0d;
+    border: 1px solid #222;
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    transition: border-color 0.2s;
+}
+.timeline-content:hover { border-color: #f5c518; }
+.timeline-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.4rem;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.timeline-top h3 { font-size: 1.05rem; font-weight: bold; color: #fff; margin: 0; }
+.timeline-date {
+    font-size: 0.8rem; color: #f5c518;
+    background-color: #1a1500;
+    border: 1px solid #f5c518;
+    border-radius: 20px;
+    padding: 2px 10px;
+    white-space: nowrap;
+}
+.timeline-place { font-size: 0.85rem; color: #888; margin-bottom: 0.6rem; }
+.timeline-place i { color: #f5c518; margin-right: 4px; }
+.timeline-list { padding-left: 1.2rem; margin: 0; }
+.timeline-list li { color: #ccc; font-size: 0.9rem; margin-bottom: 4px; line-height: 1.6; }
+
+/* ── Education Subject Tags ── */
+.edu-subjects { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.75rem; }
+.subject-tag {
+    background-color: #1a1500;
+    border: 1px solid #f5c518;
+    color: #f5c518;
+    font-size: 0.8rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* ── Self Learning Cards ── */
+.learn-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+.learn-card {
+    background-color: #0d0d0d;
+    border: 1px solid #222;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: border-color 0.2s, transform 0.2s;
+}
+.learn-card:hover { border-color: #f5c518; transform: translateY(-4px); }
+.learn-icon { font-size: 2.5rem; color: #f5c518; margin-bottom: 0.75rem; display: block; }
+.learn-card h4 { color: #fff; font-weight: bold; margin-bottom: 0.5rem; }
+.learn-card p { color: #aaa; font-size: 0.9rem; margin: 0; }
+
+/* ── Profile Card ── */
+.profile-card {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    background-color: #0d0d0d;
+    border: 1px solid #222;
+    border-radius: 16px;
+    padding: 2.5rem;
+    transition: border-color 0.2s;
+}
+.profile-card:hover { border-color: #f5c518; }
+
+.profile-image-wrap {
+    flex-shrink: 0;
+    position: relative;
+    width: 220px;
+}
+.profile-img {
+    width: 220px;
+    height: 280px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 12px;
+    border: 2px solid #f5c518;
+    display: block;
+}
+.profile-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(245, 197, 24, 0.15);
+    pointer-events: none;
+}
+
+.profile-details { flex: 1; }
+.profile-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0.25rem;
+}
+.profile-tagline {
+    color: #aaa;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+.info-icon { color: #f5c518; font-size: 1rem; margin-top: 2px; flex-shrink: 0; }
+.info-item div { display: flex; flex-direction: column; }
+.info-label { font-size: 0.75rem; color: #666; text-transform: uppercase; letter-spacing: 1px; }
+.info-value { font-size: 0.95rem; color: #fff; font-weight: 500; }
+.info-link { color: #f5c518 !important; text-decoration: none; }
+.info-link:hover { text-decoration: underline !important; }
+
+.about-bio p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    border-left: 2px solid #f5c518;
+    padding-left: 1rem;
+    margin: 0;
+}
+
+/* ── Hobbies Full Cards ── */
+.hobbies-full { display: flex; flex-direction: column; gap: 1.25rem; }
+.hobby-full-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    background-color: #0d0d0d;
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: border-color 0.2s, transform 0.2s;
+}
+.hobby-full-card:hover { border-color: #f5c518; transform: translateX(6px); }
+.hobby-full-icon {
+    font-size: 2rem;
+    color: #f5c518;
+    flex-shrink: 0;
+    width: 50px;
+    text-align: center;
+    margin-top: 4px;
+}
+.hobby-full-text h3 { font-size: 1.05rem; font-weight: bold; color: #fff; margin-bottom: 0.4rem; }
+.hobby-full-text p { color: #aaa; font-size: 0.9rem; line-height: 1.7; margin: 0; }
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+    .about-main-title { font-size: 2rem; letter-spacing: 3px; }
+    .spin-label { display: none; }
+    .profile-card { flex-direction: column; align-items: center; text-align: center; }
+    .info-grid { grid-template-columns: 1fr; }
+    .about-bio p { border-left: none; border-top: 2px solid #f5c518; padding-left: 0; padding-top: 1rem; }
+    .hobby-full-card { flex-direction: column; }
+}

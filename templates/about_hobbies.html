@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies — Konain E Mustafa</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='hover.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+
+    <div class="about-page">
+
+        <div class="about-title-row">
+            <a href="{{ url_for('about_education') }}" class="spin-ball-link">
+                <div class="spin-ball"></div>
+                <span class="spin-label">Education</span>
+            </a>
+            <h1 class="about-main-title">Hobbies</h1>
+            <a href="{{ url_for('contact') }}" class="spin-ball-link">
+                <span class="spin-label">Contact</span>
+                <div class="spin-ball"></div>
+            </a>
+        </div>
+
+        <div class="hobbies-full fade-in">
+
+            <div class="hobby-full-card">
+                <div class="hobby-full-icon"><i class="fas fa-futbol"></i></div>
+                <div class="hobby-full-text">
+                    <h3>Football & Physical Fitness</h3>
+                    <p>Football is more than a game — it teaches teamwork, strategy, and discipline. I play regularly and maintain an active fitness routine to stay sharp both physically and mentally.</p>
+                </div>
+            </div>
+
+            <div class="hobby-full-card">
+                <div class="hobby-full-icon"><i class="fas fa-flask"></i></div>
+                <div class="hobby-full-text">
+                    <h3>Coding Experimental Projects</h3>
+                    <p>I love building small projects to test new ideas — whether it's a game, a tool, or a data experiment. Building things from scratch is how I learn best and stay creative.</p>
+                </div>
+            </div>
+
+            <div class="hobby-full-card">
+                <div class="hobby-full-icon"><i class="fas fa-book-open"></i></div>
+                <div class="hobby-full-text">
+                    <h3>Reading Technical Articles</h3>
+                    <p>Staying up to date with the tech world through articles, blogs, and publications keeps me inspired. I enjoy reading about AI, software architecture, and emerging technologies.</p>
+                </div>
+            </div>
+
+            <div class="hobby-full-card">
+                <div class="hobby-full-icon"><i class="fas fa-square-root-alt"></i></div>
+                <div class="hobby-full-text">
+                    <h3>Mathematics & Physics</h3>
+                    <p>I explore mathematics and physics beyond the classroom — working through problems and concepts out of pure curiosity. These subjects sharpen my logical thinking and underpin everything I do in programming.</p>
+                </div>
+            </div>
+
+            <div class="hobby-full-card">
+                <div class="hobby-full-icon"><i class="fas fa-newspaper"></i></div>
+                <div class="hobby-full-text">
+                    <h3>Research Papers</h3>
+                    <p>Reading research papers in computer science and AI keeps me connected to the cutting edge. I enjoy understanding how ideas evolve from concept to implementation.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    {% include 'footer.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

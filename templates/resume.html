@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume — Konain E Mustafa</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='hover.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='resume.css') }}">
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+
+    <div class="resume-page">
+
+        <div class="resume-title-row">
+            <a href="{{ url_for('start') }}" class="spin-ball-link" title="Home">
+                <div class="spin-ball"></div>
+                <span class="spin-label">Home</span>
+            </a>
+            <h1 class="resume-main-title">Resume</h1>
+            <a href="{{ url_for('contact') }}" class="spin-ball-link" title="Contact">
+                <span class="spin-label">Contact</span>
+                <div class="spin-ball"></div>
+            </a>
+        </div>
+
+        <div class="cv-subheading">
+            <a href="{{ url_for('static', filename='CV/CV.pdf') }}" target="_blank" class="cv-link">CV</a>
+        </div>
+
+        <!-- PROFILE -->
+        <div class="resume-section fade-in">
+            <div class="section-header">
+                <i class="fas fa-user section-icon"></i>
+                <h2 class="section-title">Profile</h2>
+            </div>
+            <div class="profile-block">
+                <p>A motivated and detail-oriented individual from Karachi, Pakistan, with a strong foundation in Python programming, web development, and data handling. Currently pursuing FSc Pre-Engineering at Forman Christian College, Lahore. Passionate about coding, technology, and building impactful software solutions.</p>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- EDUCATION -->
+        <div class="resume-section fade-in">
+            <div class="section-header">
+                <i class="fas fa-graduation-cap section-icon"></i>
+                <a href="{{ url_for('about_education') }}" class="section-title-link">
+                    <h2 class="section-title section-title-hover">Education ↗</h2>
+                </a>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-top">
+                            <h3>FSc Pre-Engineering</h3>
+                            <span class="timeline-date">2023 – 2025</span>
+                        </div>
+                        <p class="timeline-place"><i class="fas fa-university"></i> Forman Christian College, Lahore</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-top">
+                            <h3>Matric — Biology</h3>
+                            <span class="timeline-date">2021 – 2023</span>
+                        </div>
+                        <p class="timeline-place"><i class="fas fa-school"></i> The City School, Islamabad</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- EXPERIENCE -->
+        <div class="resume-section fade-in">
+            <div class="section-header">
+                <i class="fas fa-briefcase section-icon"></i>
+                <h2 class="section-title">Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-top">
+                            <h3>Software & Operations Intern</h3>
+                            <span class="timeline-date">Sep 2025 – Present</span>
+                        </div>
+                        <p class="timeline-place"><i class="fas fa-building"></i> AK Logistics | Karachi, Pakistan</p>
+                        <ul class="timeline-list">
+                            <li>Assisted in developing software solutions to streamline logistics workflows</li>
+                            <li>Gained exposure to real-world applications of programming and systems optimization</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-top">
+                            <h3>Operations Intern</h3>
+                            <span class="timeline-date">Feb 2024 – Aug 2024</span>
+                        </div>
+                        <p class="timeline-place"><i class="fas fa-building"></i> A.M International | Lahore, Pakistan</p>
+                        <ul class="timeline-list">
+                            <li>Supported operational data handling and documentation processes</li>
+                            <li>Learned fundamentals of organizational workflows and record management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- PROJECTS -->
+        <div class="resume-section fade-in">
+            <div class="section-header">
+                <i class="fas fa-code section-icon"></i>
+                <h2 class="section-title">Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3><i class="fas fa-gamepad"></i> Black Jack</h3>
+                    <p>Python-based card game implementing full Blackjack logic and game flow.</p>
+                    <span class="tech-tag">Python</span>
+                </div>
+                <div class="project-card">
+                    <h3><i class="fas fa-map"></i> American 50 States Game</h3>
+                    <p>Interactive geography quiz game built with Python and Turtle graphics.</p>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Turtle</span>
+                </div>
+                <div class="project-card">
+                    <h3><i class="fas fa-table-tennis"></i> Paddle Game</h3>
+                    <p>Classic Pong-style paddle game demonstrating GUI design and game logic.</p>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">GUI</span>
+                </div>
+                <div class="project-card">
+                    <h3><i class="fas fa-globe"></i> Portfolio Website</h3>
+                    <p>This portfolio — a Flask-based personal website with custom CSS and responsive design.</p>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Flask</span>
+                    <span class="tech-tag">HTML/CSS</span>
+                </div>
+            </div>
+            <p class="github-line">
+                <i class="fab fa-github"></i>
+                All projects at
+                <a href="https://github.com/konainemustafa" target="_blank">github.com/konainemustafa</a>
+            </p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- SKILLS -->
+        <div class="resume-section fade-in">
+            <div class="section-header">
+                <i class="fas fa-laptop-code section-icon"></i>
+                <h2 class="section-title">Skills</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4 class="skill-cat-title"><i class="fas fa-code"></i> Programming</h4>
+                    <div class="skill-bar-group">
+                        <div class="skill-bar-item"><span>Python</span><div class="bar"><div class="bar-fill" style="--w:85%"></div></div></div>
+                        <div class="skill-bar-item"><span>HTML / CSS</span><div class="bar"><div class="bar-fill" style="--w:75%"></div></div></div>
+                        <div class="skill-bar-item"><span>JavaScript (Basic)</span><div class="bar"><div class="bar-fill" style="--w:40%"></div></div></div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4 class="skill-cat-title"><i class="fas fa-server"></i> Frameworks & Tools</h4>
+                    <div class="skill-bar-group">
+                        <div class="skill-bar-item"><span>Flask</span><div class="bar"><div class="bar-fill" style="--w:75%"></div></div></div>
+                        <div class="skill-bar-item"><span>NumPy & Pandas</span><div class="bar"><div class="bar-fill" style="--w:65%"></div></div></div>
+                        <div class="skill-bar-item"><span>Pygame</span><div class="bar"><div class="bar-fill" style="--w:80%"></div></div></div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4 class="skill-cat-title"><i class="fas fa-tools"></i> Other Skills</h4>
+                    <div class="skill-bar-group">
+                        <div class="skill-bar-item"><span>Website Development</span><div class="bar"><div class="bar-fill" style="--w:80%"></div></div></div>
+                        <div class="skill-bar-item"><span>Email Communication</span><div class="bar"><div class="bar-fill" style="--w:90%"></div></div></div>
+                        <div class="skill-bar-item"><span>DaVinci Resolve</span><div class="bar"><div class="bar-fill" style="--w:55%"></div></div></div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4 class="skill-cat-title"><i class="fas fa-language"></i> Languages</h4>
+                    <div class="skill-bar-group">
+                        <div class="skill-bar-item"><span>Urdu — Native</span><div class="bar"><div class="bar-fill" style="--w:100%"></div></div></div>
+                        <div class="skill-bar-item"><span>English — Fluent</span><div class="bar"><div class="bar-fill" style="--w:85%"></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- COMMUNITY -->
+        <div class="resume-section fade-in">
+            <div class="section-header">
+                <i class="fas fa-hands-helping section-icon"></i>
+                <h2 class="section-title">Community Work</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-top">
+                            <h3>Volunteer — Child Labour Rehabilitation</h3>
+                            <span class="timeline-date">2025</span>
+                        </div>
+                        <p class="timeline-place"><i class="fas fa-heart"></i> Shahoor Welfare Foundation | Lahore</p>
+                        <ul class="timeline-list">
+                            <li>Supported rehabilitation initiatives for children affected by child labour</li>
+                            <li>Assisted in awareness and community engagement activities</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-top">
+                            <h3>Volunteer — Flood Relief Program</h3>
+                            <span class="timeline-date">2024</span>
+                        </div>
+                        <p class="timeline-place"><i class="fas fa-heart"></i> Shahoor Welfare Foundation | Pakistan</p>
+                        <ul class="timeline-list">
+                            <li>Provided aid to flood-affected communities</li>
+                            <li>Assisted in logistics, coordination, and distribution of essential supplies</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- HOBBIES -->
+        <div class="resume-section fade-in">
+            <div class="section-header">
+                <i class="fas fa-star section-icon"></i>
+                <a href="{{ url_for('about_hobbies') }}" class="section-title-link">
+                    <h2 class="section-title section-title-hover">Hobbies & Interests ↗</h2>
+                </a>
+            </div>
+            <div class="hobbies-grid">
+                <div class="hobby-card"><i class="fas fa-futbol hobby-icon"></i><span>Football & Fitness</span></div>
+                <div class="hobby-card"><i class="fas fa-flask hobby-icon"></i><span>Coding Projects</span></div>
+                <div class="hobby-card"><i class="fas fa-book-open hobby-icon"></i><span>Technical Articles</span></div>
+                <div class="hobby-card"><i class="fas fa-square-root-alt hobby-icon"></i><span>Mathematics & Physics</span></div>
+                <div class="hobby-card"><i class="fas fa-newspaper hobby-icon"></i><span>Research Papers</span></div>
+            </div>
+        </div>
+
+    </div>
+
+    {% include 'footer.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        const barObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.querySelectorAll('.bar-fill').forEach(bar => {
+                        bar.style.width = bar.style.getPropertyValue('--w') || bar.style.width;
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+        document.querySelectorAll('.skills-grid').forEach(el => barObserver.observe(el));
+    </script>
+</body>
+</html>

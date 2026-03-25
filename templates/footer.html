@@ -1,0 +1,19 @@
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Community</a>
+        </div>
+        <div class="footer-copy">
+            &copy; <span class="footer-date"></span> Konain E Mustafa
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.querySelectorAll('.footer-date').forEach(el => {
+        const d = new Date();
+        el.textContent = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    });
+</script>
