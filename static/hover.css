@@ -1,12 +1,11 @@
-/* ── Global Hover Effects ── */
-/* Any text turns golden on hover */
+
 h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover, p:hover, li:hover, span:hover {
     color: #f5c518;
     transition: color 0.2s;
     cursor: default;
 }
 
-/* Links turn golden and get golden underline on hover */
+
 a:hover {
     color: #f5c518 !important;
     text-decoration: underline;
@@ -14,12 +13,12 @@ a:hover {
     transition: color 0.2s, text-decoration-color 0.2s;
 }
 
-/* Nav links specifically — override the underline for navbar */
+
 .nav-link:hover {
     text-decoration: none !important;
 }
 
-/* Buttons should not get text-decoration */
+
 .btn:hover {
     text-decoration: none !important;
 }

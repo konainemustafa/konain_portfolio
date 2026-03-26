@@ -1,4 +1,4 @@
-/* ── Contact Page ── */
+
 .contact-page {
     margin-top: 90px;
     padding: 3rem 2rem;
@@ -18,7 +18,7 @@
     margin: 0 auto;
 }
 
-/* ── Contact Grid ── */
+
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -65,7 +65,7 @@
     color: #f5c518;
 }
 
-/* Highlighted card */
+
 .contact-card-highlight {
     border-color: #f5c518;
     background-color: #1a1500;
@@ -75,7 +75,7 @@
     color: #f5c518;
 }
 
-/* ── Reuse spin ball from about.css ── */
+
 .about-title-row {
     display: flex;
     align-items: center;
