@@ -10,6 +10,81 @@
     <link rel="stylesheet" href="static/style.css">
     <link rel="stylesheet" href="static/hover.css">
     <link rel="stylesheet" href="static/resume.css">
+    <style>
+        /* guaranteed overrides so nothing depends on external CSS loading order */
+        .fade-in { opacity: 1 !important; transform: none !important; }
+        .resume-title-row {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            margin-bottom: 1.5rem;
+            padding-top: 90px;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        .resume-main-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: 6px;
+            text-align: center;
+            text-transform: uppercase;
+            flex: 1;
+        }
+        .resume-page {
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 2rem 4rem;
+        }
+        .cv-subheading { text-align: center; margin-bottom: 2.5rem; }
+        .projects-grid {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+            gap: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .project-card {
+            background-color: #0d0d0d !important;
+            border: 1px solid #222 !important;
+            border-radius: 10px !important;
+            padding: 1.25rem !important;
+            display: block !important;
+        }
+        .skills-grid {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+            gap: 2rem;
+        }
+        .skill-category {
+            background-color: #0d0d0d !important;
+            border: 1px solid #222 !important;
+            border-radius: 10px !important;
+            padding: 1.25rem !important;
+        }
+        .bar {
+            height: 6px !important;
+            background-color: #1a1a1a !important;
+            border-radius: 10px !important;
+            overflow: hidden !important;
+            margin-top: 4px;
+        }
+        .bar-fill {
+            height: 100% !important;
+            background: linear-gradient(to right, #f5c518, #ffd700) !important;
+            border-radius: 10px !important;
+            transition: width 1.2s ease !important;
+        }
+        @media (max-width: 767px) {
+            .resume-main-title { font-size: 2rem; letter-spacing: 3px; }
+            .spin-label { display: none; }
+            .resume-title-row { padding-top: 80px; }
+        }
+    </style>
 </head>
 <body>
 
@@ -34,7 +109,7 @@
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link golden" href="mailto:konainemustafa@gmail.com">✉ konainemustafa@gmail.com</a></li>
+                    <li class="nav-item"><a class="nav-link golden" href="mailto:konainemustafa@gmail.com">&#9993; konainemustafa@gmail.com</a></li>
                 </ul>
             </div>
         </div>
@@ -55,28 +130,26 @@
         </div>
 
         <div class="cv-subheading">
-            <a href="static/CV/CV.pdf" target="_blank" class="cv-link">CV</a>
+            <a href="static/CV/CV.pdf" target="_blank" class="cv-link" style="font-size: 1.35rem; font-weight: 800; letter-spacing: 2px; padding: 8px 28px; border: 2px solid currentColor; border-radius: 6px;">Download CV</a>
         </div>
 
-        <!-- PROFILE -->
         <div class="resume-section fade-in">
             <div class="section-header">
-                <i class="fas fa-user section-icon"></i>
-                <h2 class="section-title">Profile</h2>
+                <i class="fas fa-id-card section-icon"></i>
+                <h2 class="section-title">Profile Summary</h2>
             </div>
             <div class="profile-block">
-                <p>A motivated and detail-oriented individual from Karachi, Pakistan, with a strong foundation in Python programming, web development, and data handling. Currently pursuing FSc Pre-Engineering at Forman Christian College, Lahore. Passionate about coding, technology, and building impactful software solutions.</p>
+                <p>Motivated and self-driven software developer with hands-on experience in Python, Flask, web automation, and frontend development. Have built and deployed multiple real-world projects including a Flask e-commerce platform and a Selenium automation bot. Currently holding offer letters from multiple US universities for Fall 2026 intake. Seeking a software internship in Islamabad to gain professional experience and contribute meaningfully before university enrollment.</p>
             </div>
         </div>
 
         <div class="section-divider"></div>
 
-        <!-- EDUCATION -->
         <div class="resume-section fade-in">
             <div class="section-header">
                 <i class="fas fa-graduation-cap section-icon"></i>
                 <a href="about_education.html" class="section-title-link">
-                    <h2 class="section-title section-title-hover">Education ↗</h2>
+                    <h2 class="section-title">Education</h2>
                 </a>
             </div>
             <div class="timeline">
@@ -84,8 +157,19 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-top">
+                            <h3>US University Offer Letters Received</h3>
+                            <span class="timeline-date">Fall 2026 - Pending Decision</span>
+                        </div>
+                        <p class="timeline-place"><i class="fas fa-university"></i> USF | NJIT | UCF | DePaul | FAU | FSU | ASU &amp; more</p>
+                        <p style="margin-top: 6px; font-size: 0.88rem; opacity: 0.75;">B.S. Computer Science / Related Field - Decision Pending</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-top">
                             <h3>FSc Pre-Engineering</h3>
-                            <span class="timeline-date">2023 – 2025</span>
+                            <span class="timeline-date">2023 - 2025</span>
                         </div>
                         <p class="timeline-place"><i class="fas fa-university"></i> Forman Christian College, Lahore</p>
                     </div>
@@ -94,8 +178,8 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-top">
-                            <h3>Matric — Biology</h3>
-                            <span class="timeline-date">2021 – 2023</span>
+                            <h3>Matric - Biology</h3>
+                            <span class="timeline-date">2021 - 2023</span>
                         </div>
                         <p class="timeline-place"><i class="fas fa-school"></i> The City School, Islamabad</p>
                     </div>
@@ -105,7 +189,6 @@
 
         <div class="section-divider"></div>
 
-        <!-- EXPERIENCE -->
         <div class="resume-section fade-in">
             <div class="section-header">
                 <i class="fas fa-briefcase section-icon"></i>
@@ -116,8 +199,8 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-top">
-                            <h3>Software & Operations Intern</h3>
-                            <span class="timeline-date">Sep 2025 – Present</span>
+                            <h3>Software &amp; Operations Intern</h3>
+                            <span class="timeline-date">Sep 2025 - Jan 2026</span>
                         </div>
                         <p class="timeline-place"><i class="fas fa-building"></i> AK Logistics | Karachi, Pakistan</p>
                         <ul class="timeline-list">
@@ -131,7 +214,7 @@
                     <div class="timeline-content">
                         <div class="timeline-top">
                             <h3>Operations Intern</h3>
-                            <span class="timeline-date">Feb 2024 – Aug 2024</span>
+                            <span class="timeline-date">Feb 2024 - Aug 2024</span>
                         </div>
                         <p class="timeline-place"><i class="fas fa-building"></i> A.M International | Lahore, Pakistan</p>
                         <ul class="timeline-list">
@@ -145,7 +228,6 @@
 
         <div class="section-divider"></div>
 
-        <!-- PROJECTS -->
         <div class="resume-section fade-in">
             <div class="section-header">
                 <i class="fas fa-code section-icon"></i>
@@ -171,7 +253,7 @@
                 </div>
                 <div class="project-card">
                     <h3><i class="fas fa-globe"></i> Portfolio Website</h3>
-                    <p>This portfolio — a Flask-based personal website with custom CSS and responsive design.</p>
+                    <p>Flask-based personal website with custom CSS and responsive design.</p>
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">Flask</span>
                     <span class="tech-tag">HTML/CSS</span>
@@ -185,7 +267,6 @@
 
         <div class="section-divider"></div>
 
-        <!-- SKILLS -->
         <div class="resume-section fade-in">
             <div class="section-header">
                 <i class="fas fa-laptop-code section-icon"></i>
@@ -195,32 +276,65 @@
                 <div class="skill-category">
                     <h4 class="skill-cat-title"><i class="fas fa-code"></i> Programming</h4>
                     <div class="skill-bar-group">
-                        <div class="skill-bar-item"><span>Python</span><div class="bar"><div class="bar-fill" style="--w:85%"></div></div></div>
-                        <div class="skill-bar-item"><span>HTML / CSS</span><div class="bar"><div class="bar-fill" style="--w:75%"></div></div></div>
-                        <div class="skill-bar-item"><span>JavaScript (Basic)</span><div class="bar"><div class="bar-fill" style="--w:40%"></div></div></div>
+                        <div class="skill-bar-item">
+                            <span>Python</span>
+                            <div class="bar"><div class="bar-fill" style="width:85%"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <span>HTML / CSS</span>
+                            <div class="bar"><div class="bar-fill" style="width:75%"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <span>JavaScript (Basic)</span>
+                            <div class="bar"><div class="bar-fill" style="width:40%"></div></div>
+                        </div>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h4 class="skill-cat-title"><i class="fas fa-server"></i> Frameworks & Tools</h4>
+                    <h4 class="skill-cat-title"><i class="fas fa-server"></i> Frameworks &amp; Tools</h4>
                     <div class="skill-bar-group">
-                        <div class="skill-bar-item"><span>Flask</span><div class="bar"><div class="bar-fill" style="--w:75%"></div></div></div>
-                        <div class="skill-bar-item"><span>NumPy & Pandas</span><div class="bar"><div class="bar-fill" style="--w:65%"></div></div></div>
-                        <div class="skill-bar-item"><span>Pygame</span><div class="bar"><div class="bar-fill" style="--w:80%"></div></div></div>
+                        <div class="skill-bar-item">
+                            <span>Flask</span>
+                            <div class="bar"><div class="bar-fill" style="width:75%"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <span>NumPy &amp; Pandas</span>
+                            <div class="bar"><div class="bar-fill" style="width:65%"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <span>Pygame</span>
+                            <div class="bar"><div class="bar-fill" style="width:80%"></div></div>
+                        </div>
                     </div>
                 </div>
                 <div class="skill-category">
                     <h4 class="skill-cat-title"><i class="fas fa-tools"></i> Other Skills</h4>
                     <div class="skill-bar-group">
-                        <div class="skill-bar-item"><span>Website Development</span><div class="bar"><div class="bar-fill" style="--w:80%"></div></div></div>
-                        <div class="skill-bar-item"><span>Email Communication</span><div class="bar"><div class="bar-fill" style="--w:90%"></div></div></div>
-                        <div class="skill-bar-item"><span>DaVinci Resolve</span><div class="bar"><div class="bar-fill" style="--w:55%"></div></div></div>
+                        <div class="skill-bar-item">
+                            <span>Website Development</span>
+                            <div class="bar"><div class="bar-fill" style="width:80%"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <span>Email Communication</span>
+                            <div class="bar"><div class="bar-fill" style="width:90%"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <span>DaVinci Resolve</span>
+                            <div class="bar"><div class="bar-fill" style="width:55%"></div></div>
+                        </div>
                     </div>
                 </div>
                 <div class="skill-category">
                     <h4 class="skill-cat-title"><i class="fas fa-language"></i> Languages</h4>
                     <div class="skill-bar-group">
-                        <div class="skill-bar-item"><span>Urdu — Native</span><div class="bar"><div class="bar-fill" style="--w:100%"></div></div></div>
-                        <div class="skill-bar-item"><span>English — Fluent</span><div class="bar"><div class="bar-fill" style="--w:85%"></div></div></div>
+                        <div class="skill-bar-item">
+                            <span>Urdu - Native</span>
+                            <div class="bar"><div class="bar-fill" style="width:100%"></div></div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <span>English - Fluent</span>
+                            <div class="bar"><div class="bar-fill" style="width:85%"></div></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -228,7 +342,6 @@
 
         <div class="section-divider"></div>
 
-        <!-- COMMUNITY -->
         <div class="resume-section fade-in">
             <div class="section-header">
                 <i class="fas fa-hands-helping section-icon"></i>
@@ -239,7 +352,7 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-top">
-                            <h3>Volunteer — Child Labour Rehabilitation</h3>
+                            <h3>Volunteer - Child Labour Rehabilitation</h3>
                             <span class="timeline-date">2025</span>
                         </div>
                         <p class="timeline-place"><i class="fas fa-heart"></i> Shahoor Welfare Foundation | Lahore</p>
@@ -253,7 +366,7 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-top">
-                            <h3>Volunteer — Flood Relief Program</h3>
+                            <h3>Volunteer - Flood Relief Program</h3>
                             <span class="timeline-date">2024</span>
                         </div>
                         <p class="timeline-place"><i class="fas fa-heart"></i> Shahoor Welfare Foundation | Pakistan</p>
@@ -268,19 +381,18 @@
 
         <div class="section-divider"></div>
 
-        <!-- HOBBIES -->
         <div class="resume-section fade-in">
             <div class="section-header">
                 <i class="fas fa-star section-icon"></i>
                 <a href="about_hobbies.html" class="section-title-link">
-                    <h2 class="section-title section-title-hover">Hobbies & Interests ↗</h2>
+                    <h2 class="section-title">Hobbies &amp; Interests</h2>
                 </a>
             </div>
             <div class="hobbies-grid">
-                <div class="hobby-card"><i class="fas fa-futbol hobby-icon"></i><span>Football & Fitness</span></div>
+                <div class="hobby-card"><i class="fas fa-futbol hobby-icon"></i><span>Football &amp; Fitness</span></div>
                 <div class="hobby-card"><i class="fas fa-flask hobby-icon"></i><span>Coding Projects</span></div>
                 <div class="hobby-card"><i class="fas fa-book-open hobby-icon"></i><span>Technical Articles</span></div>
-                <div class="hobby-card"><i class="fas fa-square-root-alt hobby-icon"></i><span>Mathematics & Physics</span></div>
+                <div class="hobby-card"><i class="fas fa-square-root-alt hobby-icon"></i><span>Mathematics &amp; Physics</span></div>
                 <div class="hobby-card"><i class="fas fa-newspaper hobby-icon"></i><span>Research Papers</span></div>
             </div>
         </div>
@@ -300,24 +412,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script>
-        document.querySelectorAll(".footer-date").forEach(el => {
-            const d = new Date();
+        document.querySelectorAll(".footer-date").forEach(function(el) {
+            var d = new Date();
             el.textContent = d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
         });
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-        const barObserver = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.querySelectorAll('.bar-fill').forEach(bar => {
-                        bar.style.width = bar.style.getPropertyValue('--w') || bar.style.width;
-                    });
-                }
-            });
-        }, { threshold: 0.3 });
-        document.querySelectorAll('.skills-grid').forEach(el => barObserver.observe(el));
     </script>
 </body>
 </html>
